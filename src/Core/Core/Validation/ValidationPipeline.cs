@@ -39,7 +39,7 @@ public class ValidationPipeline<TRequest>: IRequestPreProcessor<TRequest>
     }
 }
 
-public class ValidationPipeline<TRequest, TResponse>: IPipelineBehavior<TRequest, TResponse>
+public class ValidationPipeline<TRequest, TResponse>: IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
